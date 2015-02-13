@@ -1,6 +1,15 @@
+img {
+  height: 35px;
+  width: 35px;
+}
+
+footer {
+  margin: 15px auto 5px auto;
+  text-align: center;
+}
 /*This is the CSS for the OOP version*/
 
-.message, .title {
+/*.message, .title {
   text-align: center;
 }
 
@@ -25,4 +34,5 @@
 
 h1{
   color: orange;
-}
+}*/
+

@@ -2,7 +2,6 @@ $(function() {
 
 //Create board obejct and assign each square the blank value.
   var board = ["","","","","","","","",""];
-
   var X = 'X';
   var O = 'O';
   var curPlayer = X;
@@ -15,34 +14,26 @@ $(function() {
   };
 
   var addXorO = function(){
-
     $('.square').on('click', function(){
-
       if($(this).html()){
         alert("Illegal move! Try another square.");
       } else {
-        $(this).html( curPlayer);
-
-      $(this).html( curPlayer);
-
-      var index = parseInt($(this).attr('id'));
-      console.log(index);
-      board[index] = curPlayer;
-      console.log(board);
-      win();
-      switchPlayer();
-
-      countClicks();
-
-      }
-    }
-    );
+          $(this).html( curPlayer);
+          $(this).html( curPlayer);
+          var index = parseInt($(this).attr('id'));
+          console.log(index);
+          board[index] = curPlayer;
+          console.log(board);
+          win();
+          switchPlayer();
+          countClicks();
+        }
+    });
   };
 
 
   var win = function(){
     //Horizontal winning alignments
-
     if((board[0] === board[1])&&(board[0] === board[2])&&board[0]){
       alert(curPlayer + " Wins!");
       resetBoard();
@@ -78,20 +69,17 @@ $(function() {
       alert(curPlayer + " Wins!");
       resetBoard();
     }
-
   };
-
 
   var displayMessage = function( message ) {
     $( '.message' ).html( message );
   };
 
-var resetBoard = function(){
-  board = ["","","","","","","","",""];
-  count = 0;
-  $('.square').html("");
-
-};
+  var resetBoard = function(){
+    board = ["","","","","","","","",""];
+    count = 0;
+    $('.square').html("");
+  };
 
   //Selectors
   var $container = $('#container');
@@ -137,7 +125,6 @@ var resetBoard = function(){
     $('#0, #1, #2, #3, #4, #5').css(borderbottom, borderstyling);
     $('#0, #1, #3, #4, #6, #7').css(borderright, borderstyling);
   };
-
   switchPlayer();
   renderGrid();
   gridStyling();
